@@ -1,6 +1,14 @@
 Depot::Application.routes.draw do
-  resources :products
+  resources :line_items
 
+
+  resources :carts
+
+
+  get "store/index"
+
+  resources :products
+  root to: "products#index", as: "home"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -26,7 +34,7 @@ Depot::Application.routes.draw do
   #     collection do
   #       get 'sold'
   #     end
-  #   end
+   #   end
 
   # Sample resource route with sub-resources:
   #   resources :products do
