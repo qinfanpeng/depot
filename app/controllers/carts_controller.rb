@@ -17,7 +17,7 @@ class CartsController < ApplicationController
       @cart = Cart.find(params[:id])
     rescue ActiveRecord::RecordNotFound
       logger.error "Attempt to access an invalid cart #{params[:id]}"
-      redirect_to home_path, notice: 'invalid cart'
+      redirect_to home_url, notice: 'invalid cart'
     else
       respond_to do |format|
         format.html # show.html.erb
@@ -77,11 +77,11 @@ class CartsController < ApplicationController
   # DELETE /carts/1
   # DELETE /carts/1.json
   def destroy
-    @cart = Cart.find(params[:id])
-    @cart.destroy
+    current_cart.destroy
+    session[:cart_id] = nil
 
     respond_to do |format|
-      format.html { redirect_to carts_url }
+      format.html { redirect_to home_url, notice: 'now your cart is empty' }
       format.json { head :no_content }
     end
   end

@@ -7,8 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <h1>my store here...</h1>
+<div>
 <%= yield %>
-
+</div>
+<div id='div_side'>
+  <%= render @cart %>
+</div>
 </body>
 </html>

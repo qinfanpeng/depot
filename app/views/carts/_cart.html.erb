@@ -1,0 +1,20 @@
+<h3>your cart</h3>
+<table>
+  <thead>
+    <tr>
+      <th>quantity</th>
+      <th>title</th>
+      <th>total price</th>
+    </tr>
+  </thead>
+  <%= render cart.line_items %>
+  <tr>
+    <td colspan='3'><%= number_to_currency(cart.total_price, unit: "&yen") %></td>
+  </tr>
+</table>
+
+<div>
+  <%= link_to 'Empty Cart', cart, :method => :delete, confirm: 'are you sure?'%>
+</div>
+<%= link_to 'Edit', edit_cart_path(cart) %> |
+<%= link_to 'Back', carts_path %>
