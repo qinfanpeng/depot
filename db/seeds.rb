@@ -8,8 +8,10 @@
 
 Product.delete_all
 
-Product.create!(
-  title: 'test product',
-  description: 'hello world, how do you do ? how do you do ?',
-  image_url: '/images/test.png',
-  price: 11.11)
+10.times do |i|
+  Product.create!(
+    title: "test product#{i}",
+    description: "hello world, how do you do ? how do you do ?#{i}",
+    image_url: "/images/test#{i}.png",
+    price: 11.11 * (i+1))
+end

@@ -7,11 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div>
-<%= yield %>
+
+<div id='div_main'>
+  <%= yield %>
 </div>
+
 <div id='div_side'>
-  <%= render @cart %>
+  <div id='cart'>
+    <%= render @cart %>
+  </div>
 </div>
+
 </body>
 </html>
