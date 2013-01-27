@@ -1,5 +1,5 @@
-source 'https://rubygems.org'
-
+# source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
 gem 'rails', '3.2.9'
 
 # Bundle edge Rails instead:
@@ -21,6 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'will_paginate', '>= 3.0.pre'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

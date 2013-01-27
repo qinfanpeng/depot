@@ -8,7 +8,7 @@
 
 Product.delete_all
 
-10.times do |i|
+100.times do |i|
   Product.create!(
     title: "test product#{i}",
     description: "hello world, how do you do ? how do you do ?#{i}",

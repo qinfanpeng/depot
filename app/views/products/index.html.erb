@@ -28,10 +28,7 @@
 <br />
 
 <%= link_to 'New Product', new_product_path %>
-<!--
-<div id='div_side'>
-  <div id='cart'>
-    <%= render @cart %>
-  </div>
-</div>
--->
+<%= will_paginate @products %>
+<%= link_to t('.login'), login_path %>
+<%= link_to t('.logout'), logout_path, :method => :delete %>
+<%= link_to t('.admin'), admin_path %>

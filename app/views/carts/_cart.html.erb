@@ -15,7 +15,8 @@
   </table>
 
   <div>
-    <%= link_to 'Empty Cart', cart, :method => :delete, confirm: 'are you sure?', remote: true%>
+    <%= button_to 'Check Out', new_order_path, method: 'get' %>
+    <%= button_to 'Empty Cart', cart, :method => :delete, confirm: 'are you sure?', remote: true%>
   </div>
   <%= link_to 'Edit', edit_cart_path(cart) %>
   <%= link_to 'Back', carts_path %>

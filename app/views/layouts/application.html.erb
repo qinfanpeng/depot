@@ -8,6 +8,13 @@
 </head>
 <body>
 
+<%= form_tag set_locale_path, class: 'locale' do %>
+  <%= select_tag 'locale',
+      options_for_select(LANGUAGES, I18n.locale.to_s),
+      prompt: '切换语言',
+      :onchange => 'this.form.submit()' %>
+<% end %>
+
 <div id='div_main'>
   <%= yield %>
 </div>

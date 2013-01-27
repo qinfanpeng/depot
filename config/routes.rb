@@ -1,4 +1,13 @@
 Depot::Application.routes.draw do
+
+  get "admin/index"
+
+  resources :users
+
+
+  resources :orders
+
+
   resources :line_items
 
 
@@ -9,6 +18,20 @@ Depot::Application.routes.draw do
 
   resources :products
   root to: "products#index", as: "home"
+
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+
+  controller :admin do
+    get 'admin' => :index
+  end
+
+  controller :application do
+    post 'set_locale' => :set_locale
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

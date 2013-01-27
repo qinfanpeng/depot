@@ -1,0 +1,9 @@
+zh_CN:
+  system:
+    admin: 后台管理
+
+  products:
+    index:
+      login: 登录
+      logout: 安全退出
+      admin: 后台管理

@@ -1,0 +1,17 @@
+<h1>user login</h1>
+<p id="notice"><%= notice %></p>
+<%= form_tag %>
+
+<div>
+  <label>name:</label>
+  <%= text_field_tag :name, params[:name] %>
+</div>
+
+<div>
+  <label>password:</label>
+  <%= password_field_tag :password, params[:password] %>
+</div>
+
+<div>
+  <%= submit_tag 'login' %>
+</div>

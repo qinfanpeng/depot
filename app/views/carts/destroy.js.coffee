@@ -1,2 +1,2 @@
-$("#notice").html 'now your cart is empty'
+$("#notice").html '<%= @notice %>'
 $("#cart").hide()
