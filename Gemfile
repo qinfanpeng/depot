@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # source 'https://rubygems.org'
 source 'http://ruby.taobao.org'
 gem 'rails', '3.2.9'
@@ -37,3 +38,18 @@ gem 'will_paginate', '>= 3.0.pre'
 
 # To use debugger
 # gem 'debugger'
+
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem 'meta_request'
+end
+
+# gem 'jquery-turbolinks'
+gem 'turbolinks'
+gem 'cache_digests'
+gem 'friendly_id'
+gem "decent_exposure"
+gem "inherited_resources"
+
+gem 'rack-mini-profiler', group: :development

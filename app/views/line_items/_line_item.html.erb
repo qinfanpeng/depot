@@ -1,3 +1,4 @@
+<% cache line_item do %>
 <% if @current_line_item == line_item %>
   <tr id='tr_current_update'>
 <% else %>
@@ -7,3 +8,4 @@
   <td><%= line_item.product.title %></td>
   <td><%= number_to_currency(line_item.total_price, unit: "&yen;")  %></td>
 </tr>
+<% end %>

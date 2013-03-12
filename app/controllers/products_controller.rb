@@ -1,8 +1,10 @@
 class ProductsController < ApplicationController
+  expose :product
   # GET /products
   # GET /products.json
   def index
 #    @products = Product.all
+#    test_better_errors = Product.xyz  # no method name is zyz
     @products = Product.paginate page: params[:page], per_page: 5
 
     respond_to do |format|
@@ -14,18 +16,18 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @product = Product.find(params[:id])
+  #  @product = Product.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @product }
+      format.json { render json: product }
     end
   end
 
   # GET /products/new
   # GET /products/new.json
   def new
-    @product = Product.new
+#    @product = Product.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -45,7 +47,8 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        flash[:notice] = "Product was successfully created. "
+        format.html { redirect_to @product }
         format.json { render json: @product, status: :created, location: @product }
       else
         format.html { render action: "new" }
@@ -81,4 +84,5 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end

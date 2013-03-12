@@ -6,6 +6,14 @@ class Product < ActiveRecord::Base
   validates :price, numericality: {greater_than_or_equal_to: 0.01}
   has_many :line_items
 
+#  has_friendly_id :title
+#  extend FriendlyId
+# friendly_id :title
+
+  def to_param
+    "#{id} #{title}".parameterize
+  end
+
   before_destroy :ensure_not_referenced_by_any_line_item
 
   private

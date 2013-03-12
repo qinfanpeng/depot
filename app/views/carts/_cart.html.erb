@@ -1,5 +1,6 @@
+
 <% unless cart.line_items.empty? %>
- <h3>your cart</h3>
+ <h4>your cart</h4>
   <table>
     <thead>
       <tr>
@@ -13,11 +14,12 @@
       <td colspan='3'><%= number_to_currency(cart.total_price, unit: "&yen") %></td>
     </tr>
   </table>
-
+<% cache cart do %>
   <div>
-    <%= button_to 'Check Out', new_order_path, method: 'get' %>
+    <%= button_to 'Check Out2', new_order_path, method: 'get' %>
     <%= button_to 'Empty Cart', cart, :method => :delete, confirm: 'are you sure?', remote: true%>
   </div>
+<% end %>
   <%= link_to 'Edit', edit_cart_path(cart) %>
   <%= link_to 'Back', carts_path %>
 <% end %>

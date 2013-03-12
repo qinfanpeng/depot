@@ -1,6 +1,8 @@
-class CartsController < ApplicationController
+# class CartsController < ApplicationController
+class CartsController < InheritedResources::Base
   # GET /carts
   # GET /carts.json
+=begin
   def index
     @carts = Cart.all
 
@@ -36,7 +38,7 @@ class CartsController < ApplicationController
       format.json { render json: @cart }
     end
   end
-
+=end
   # GET /carts/1/edit
   def edit
     @cart = Cart.find(params[:id])
